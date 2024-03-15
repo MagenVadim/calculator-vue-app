@@ -24,7 +24,6 @@ export const Header = styled(Flex)`
     justify-content: space-between;
     color: var(--white-text);
     font-size: 1.2rem;
-    background-color: lightblue;
 `
 
 export const WrapperSwitch = styled(Flex)`
@@ -32,14 +31,12 @@ export const WrapperSwitch = styled(Flex)`
     font-size: .85rem;
     align-items: flex-end;
     justify-content: space-between;
-    background-color: bisque;
 `
 export const Switch = styled.div`
     font-size: .9rem;
     flex: 0.75;
     justify-content: center;
     align-items: center;
-    background-color: lemonchiffon;
     
     div:first-of-type{
         width: 80%;
@@ -62,4 +59,8 @@ export const SwitcherContainer = styled.div`
 
 export const Switcher = styled.div<Theme>`
     width: 11px;
+    height: 11px;
+    min-height: 11px;
+    background-color: var(--key-background-red);
+    border-radius: 2rem;
 `

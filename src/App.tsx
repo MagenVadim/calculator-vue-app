@@ -3,12 +3,20 @@ import GlobalStyle1 from "./Styles/theme1"
 import GlobalStyle2 from "./Styles/theme2"
 import GlobalStyle3 from "./Styles/theme3"
 
-import { Container, Header, WrapperSwitch, Switch, SwitcherContainer, Switcher } from "./Styles/App.style"
+import { 
+  Container, 
+  Header, 
+  WrapperSwitch, 
+  Switch, 
+  SwitcherContainer, 
+  Switcher 
+} from "./Styles/App.style"
 
 function App() {
 
   return (
     <>
+    {<GlobalStyle1/>}
       <Container>
 
         <Header>
