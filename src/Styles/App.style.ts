@@ -84,7 +84,7 @@ export const Input = styled.div`
     font-size: 1.5rem;
     color: var(--white-text);
     background-color: var(--screen-background);
-    text-aligb: right;
+    text-align: right;
     margin: 1.3rem 0;
     border-radius: .5rem;
 `
