@@ -17,6 +17,23 @@ import {
 
 function App() {
 
+  const [value, setValue] = useState('');
+  const [theme, setTheme] = useState(1);
+  const [themeValue, setThemeValue] = useState("8%");
+
+  const handleTheme = ()=>{
+    if(theme===1){
+      setTheme(2);
+      setThemeValue("38%")
+    } else if (theme===2){
+      setTheme(3);
+      setThemeValue("70%");
+    } else{
+      setTheme(1);
+      setThemeValue("8%");
+    }
+  }
+
   return (
     <>
     {<GlobalStyle1/>}
@@ -33,9 +50,9 @@ function App() {
                 <span>2</span>
                 <span>3</span>
               </div>
-              <SwitcherContainer>
+              <SwitcherContainer onClick={handleTheme}>
 
-                <Switcher/>
+                <Switcher theme={themeValue}/>
                 
               </SwitcherContainer>
             </Switch>
