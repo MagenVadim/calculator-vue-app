@@ -44,6 +44,13 @@ function App() {
     }
   }
 
+  const addSymbol = (symbol:string)=>{
+    if(value.slice(-1) != " " && value.slice(-1) != "." && !value.includes(".")){
+      setValue(value + symbol)
+    }
+  }
+
+
   return (
     <>
     {theme===1 && <GlobalStyle1/>}
@@ -86,20 +93,27 @@ function App() {
           <Button onClick={()=>setValue(value + "4")}>4</Button>
           <Button onClick={()=>setValue(value + "5")}>5</Button>
           <Button onClick={()=>setValue(value + "6")}>6</Button>
-          <Button>
+
+          <Button onClick={()=>value.length>=1 && addSymbol(" + ")}>
             +
           </Button>
+          
           <Button onClick={()=>setValue(value + "1")}>1</Button>
           <Button onClick={()=>setValue(value + "2")}>2</Button>
           <Button onClick={()=>setValue(value + "3")}>3</Button>
-          <Button>
-            -
-          </Button>
 
-          <Button>.</Button>
+          <Button 
+            onClick={()=>value.length>=1 && addSymbol(" - ")}
+          >-</Button>
+
+          <Button 
+            onClick={()=>value.length>=1 && addSymbol(".")}
+          >.</Button>
+
           <Button onClick={()=>setValue(value + "0")}>0</Button>
+
           <Button>/</Button>
-          <Button>
+          <Button >
             x
           </Button>
 
