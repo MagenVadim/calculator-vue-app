@@ -50,6 +50,11 @@ function App() {
     }
   }
 
+    const calc = ()=>{
+      if(value.length>=5 && value.slice(-1)!== " "){
+        setValue(eval(value).toString())
+      }
+    }
 
   return (
     <>
@@ -97,7 +102,7 @@ function App() {
           <Button onClick={()=>value.length>=1 && addSymbol(" + ")}>
             +
           </Button>
-          
+
           <Button onClick={()=>setValue(value + "1")}>1</Button>
           <Button onClick={()=>setValue(value + "2")}>2</Button>
           <Button onClick={()=>setValue(value + "3")}>3</Button>
@@ -112,17 +117,23 @@ function App() {
 
           <Button onClick={()=>setValue(value + "0")}>0</Button>
 
-          <Button>/</Button>
-          <Button >
-            x
-          </Button>
+          <Button
+            onClick={()=>value.length>=1 && addSymbol(" / ")}
+          >/</Button>
 
-          <Button gc="1/3" color="var(--white)" bg="var(--key-background-dark-blue)" bdbox="var(--key-shadow-dark-blue)">
-            RESET
-          </Button>
+          <Button 
+            onClick={()=>value.length>=1 && addSymbol(" * ")}
+          >x</Button>
 
-          <Button gc="3/5" color="var(--white)" bg="var(--key-background-red)" bdbox="var(--key-shadow-dark-red)">
-            =
+          <Button
+            onClick={()=>setValue("")}
+            gc="1/3" color="var(--white)" bg="var(--key-background-dark-blue)" bdbox="var(--key-shadow-dark-blue)"
+          >RESET</Button>
+
+          <Button 
+            onClick={calc}
+            gc="3/5" color="var(--white)" bg="var(--key-background-red)" bdbox="var(--key-shadow-dark-red)"
+          >=
           </Button>
 
         </ButtonContainer>
